@@ -26,7 +26,8 @@
   url("https://images.unsplash.com/photo-1543351611-58f69d7c1781?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80");
   background-size: cover;
   height: 200vh;
-
+  color: #ffffff;
+  -webkit-text-stroke: 1px black;
 }
 
 .tabs {
@@ -69,6 +70,7 @@
 
 .league-div:hover {
   transform: scale(1.1);
+  transition: transform 550ms;
 }
 
 .league-div {
@@ -109,15 +111,14 @@ select {
 @Media (max-width: 480px) {
   div.navbar h1 {
     font-size: 20px;
-
   }
+
   .leagues-container {
     display: flex;
     flex-direction: column;
     width: 100%;
-    
-    
   }
+
   .content-container {
     background-size: cover;
     height: auto;
