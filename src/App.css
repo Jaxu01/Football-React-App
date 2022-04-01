@@ -69,13 +69,22 @@
 }
 
 .league-div:hover {
-  transform: scale(1.1);
-  transition: transform 550ms;
+  transform: scale(1.2);
 }
 
 .league-div {
   margin: 20px 0;
+  transition: transform 550ms;
   }
+
+.league-div h1 {
+  transition: all 200ms;
+}
+
+.league-div:hover h1 {
+  opacity: 0;
+  transform: scale(0);
+}
 
 .league-div > img {
   width: 250px;

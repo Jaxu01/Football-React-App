@@ -1,22 +1,22 @@
-import React, {useState, useEffect} from "react";
-import axios from "axios";
+import React, {useState, useEffect, useCallback} from "react";
 const Standings = () => {
 
     const [data,setData] = useState([]);
-    const [loading,setLoading] = useState(false);
     const [selectedLeague,setSelectedLeague] = useState('ita.1');
     const [selectedYear,setSelectedYear] = useState('2021');
     const years = [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021];
 
+    
+    const getLeagues = useCallback(async() => {
+      let response = await fetch(`https://api-football-standings.azharimm.site/leagues/${selectedLeague}/standings?season=${selectedYear}`)
+      response = await response.json()
+      console.log(response)
+      setData(response.data.standings);
+    });
+
     useEffect(() => {
-        setLoading(true);
-        axios(`https://api-football-standings.azharimm.site/leagues/${selectedLeague}/standings?season=${selectedYear}`
-        ).then(res=> {
-            console.log(res.data.data.standings);
-            setData(res.data.data.standings);
-        }).catch(err=>console.log(err))
-        .finally(() => setLoading(false));
-    }, [selectedYear, selectedLeague]);
+      getLeagues()
+    }, [getLeagues]);
 
     return (
         <div className="standings-container">
@@ -53,14 +53,12 @@ const Standings = () => {
                     onChange={(e) => setSelectedYear(e.target.value)}
                     defaultValue={selectedYear}
                 >
-                  {years.map(year =>(<option value={year}>{year}</option>))}
+                  {years.map((year, index) =>(<option key={index} value={year}>{year}</option>))}
                 </select>
             </div>
             <div className="ranking-div">
-        {loading ? (
-          <span></span>
-        ) : (
-          data?.map((data, index) => (
+
+          {data?.map((data, index) => (
             <div key={index} className="ranking-div-inner">
               <h1>
                 <span>
@@ -75,8 +73,7 @@ const Standings = () => {
                 {data.team.shortDisplayName}
               </h1>
             </div>
-          ))
-        )}
+          ))};
       </div>
     </div>
   );
