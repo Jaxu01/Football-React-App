@@ -2,7 +2,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  
 }
 
 .navbar {
@@ -16,6 +15,16 @@
   text-align: center;
 }
 
+.Tabs {
+  margin: 0;
+  font-size: 40px;
+}
+
+.Tabs >button {
+  font-size: 20px;
+  color: inherit;
+}
+
 .content-container {
   width: 100%;
   min-height: 80vh;
@@ -27,7 +36,8 @@
   background-size: cover;
   height: 200vh;
   color: #ffffff;
-  -webkit-text-stroke: 1px black;
+  background-attachment: fixed;
+  background-position-y: -600px;
 }
 
 .tabs {
@@ -75,6 +85,7 @@
 .league-div {
   margin: 20px 0;
   transition: transform 550ms;
+  -webkit-text-stroke: 1px black;
   }
 
 .league-div h1 {
@@ -115,6 +126,7 @@ select {
 }
 .ranking-div-inner {
   margin: 20px 0;
+  -webkit-text-stroke: 1px black;
 }
 
 @Media (max-width: 480px) {
@@ -130,8 +142,10 @@ select {
 
   .content-container {
     background-size: cover;
+    background-repeat: no-repeat;
     height: auto;
     width: auto;
+    background-position-y: 0;
     background-color: transparent;
   }
 }
@@ -147,6 +161,8 @@ select {
       background-size: cover;
       height: auto;
       width: auto;
+      background-repeat: no-repeat;
+      background-position-y: 0;
       background-color: transparent;
     }
   }
