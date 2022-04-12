@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
+import Paper from '@mui/material/Paper';
 
 const Standings = () => {
 
@@ -41,8 +42,10 @@ const Standings = () => {
       };
     }, [selectedLeague, selectedYear]);
 
-    return (
+  return (
+    <Paper elevation={3}>
         <div className="standings-container">
+        
             <div className="select-container">
             <FormControl>
               <InputLabel id="select-label-league">League</InputLabel>
@@ -105,8 +108,9 @@ const Standings = () => {
               </h1>
             </div>
           ))}
+        </div>
       </div>
-    </div>
+    </Paper>
   );
 };
 
