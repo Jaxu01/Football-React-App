@@ -81,13 +81,15 @@
   margin: 20px 0;
   transition: transform 550ms;
   -webkit-text-stroke: 1px black;
-  }
-
-.league-div h1 {
-  transition: all 200ms;
 }
 
-.league-div:hover h1 {
+.league-div p {
+  transition: all 200ms;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.league-div:hover p {
   opacity: 0;
   transform: scale(0);
 }
@@ -107,21 +109,25 @@
   text-align: center;
 }
 
-.select {
-  align-items: center;
+.select-container {
+  display: flex;
+  justify-content: center;
   padding: 20px;
   font-size: 20px;
+
 }
 
 .ranking-div {
   display: flex;
   align-items: center;
   flex-direction: column;
-  text-align: center;
+  width: fit-content;
+  margin: auto;
 }
 .ranking-div-inner {
   margin: 20px 0;
   -webkit-text-stroke: 1px black;
+  width: 100%;
 }
 
 @Media (max-width: 480px) {

@@ -1,14 +1,9 @@
-import {useState, useEffect, useCallback} from "react";
+import {useState, useEffect} from "react";
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-import PropTypes from 'prop-types';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
+import Select from '@mui/material/Select';
 import Paper from '@mui/material/Paper';
 
 const Standings = () => {
@@ -43,7 +38,11 @@ const Standings = () => {
     }, [selectedLeague, selectedYear]);
 
   return (
-    <Paper elevation={3}>
+    <Paper elevation={3}
+      sx={{
+        width: 600,
+      }}
+    >
         <div className="standings-container">
         
             <div className="select-container">
