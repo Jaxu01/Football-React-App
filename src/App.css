@@ -1,38 +1,175 @@
-.App {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  width: 100%;
+  height: 10vh;
+  background-color: #0099ff;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Tabs button {
+  color: inherit;
+  font-size: 40px;
+  height: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.content-container {
+  width: 100%;
+  min-height: 80vh;
   display: flex;
+  align-items: center;
   flex-direction: column;
+  background-image:
+  url("https://images.unsplash.com/photo-1543351611-58f69d7c1781?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80");
+  background-size: cover;
+  height: 200vh;
+  color: #ffffff;
+  background-attachment: fixed;
+  background-position-y: -600px;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 50px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.tab-leagues {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0099ff;
+  color: #ffffff;
+  height: 50px;
+  border-right: 5px solid #cccc;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.tab-standings {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0099ff;
+  color: #ffffff;
+  height: 50px;
+}
+
+.leagues-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  text-align: center;
+}
+
+.league-div:hover {
+  transform: scale(1.2);
+}
+
+.league-div {
+  margin: 20px 0;
+  transition: transform 550ms;
+  -webkit-text-stroke: 1px black;
+}
+
+.league-div p {
+  transition: all 200ms;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.league-div:hover p {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.league-div > img {
+  width: 250px;
+}
+
+.footer {
+  width: 100%;
+  height: 10vh;
+  background-color: #0099ff;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.select-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  font-size: 20px;
+
+}
+
+.ranking-div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: fit-content;
+  margin: auto;
+}
+.ranking-div-inner {
+  margin: 20px 0;
+  -webkit-text-stroke: 1px black;
+  width: 100%;
+}
+
+@Media (max-width: 480px) {
+  div.navbar h1 {
+    font-size: 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .leagues-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .Tabs button {
+    font-size: 20px;
+    color: inherit;
+  }
+
+  .content-container {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
+    width: auto;
+    background-position-y: 0;
+    background-color: transparent;
   }
 }
+  @Media (max-width: 1024px) {
+  
+    .leagues-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .content-container {
+      background-size: cover;
+      height: auto;
+      width: auto;
+      background-repeat: no-repeat;
+      background-position-y: 0;
+      background-color: transparent;
+    }
+  }
